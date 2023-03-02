@@ -11,7 +11,7 @@ class SQLHandler {
   }
 
   static Future<sql.Database> db() async {
-    return sql.openDatabase("database_name.db", version: 1,
+    return sql.openDatabase("flutterDemo.db", version: 1,
         onCreate: (sql.Database database, int version) async {
       await createTable(database);
     });
