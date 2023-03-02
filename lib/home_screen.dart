@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, use_build_context_synchronously, unused_field
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/db_handler.dart';
 
@@ -70,7 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 hintText: "Description",
               ),
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 20),
             Center(
               child: ElevatedButton(
                 onPressed: () async {
@@ -88,10 +90,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   Navigator.of(context).pop();
                 },
                 child: Padding(
-                  padding: EdgeInsets.all(18),
+                  padding: EdgeInsets.all(15),
                   child: Text(
                     id == null ? "Add Data" : "Update",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                   ),
                 ),
               ),
@@ -130,9 +132,10 @@ class _HomeScreenState extends State<HomeScreen> {
     _refreshData();
   }
 
+  //Navbar bottom
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+      TextStyle(fontSize: 20, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     Text(
       'Index 0: Home',
@@ -187,7 +190,7 @@ class _HomeScreenState extends State<HomeScreen> {
           : ListView.builder(
               itemCount: _allData.length,
               itemBuilder: (context, index) => Card(
-                margin: EdgeInsets.all(15),
+                margin: EdgeInsets.all(10),
                 child: ListTile(
                     title: Padding(
                       padding: EdgeInsets.symmetric(vertical: 5),
@@ -198,7 +201,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     ),
-                    subtitle: Text(_allData[index]['desc']),
+                    subtitle: Text(
+                      _allData[index]['desc'],
+                      style: TextStyle(fontSize: 15, color: Colors.blue),
+                    ),
                     trailing: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
